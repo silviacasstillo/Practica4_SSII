@@ -1,0 +1,5 @@
+alert tcp $EXTERNAL_NET any -> $HOME_NET [8083,8443] (msg:"T5: Acceso sospechoso HTTP/HTTPS interno"; sid:1001; rev:1; classtype:attempted-recon;)
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 3336 (msg:"T5: Acceso sospechoso MySQL admin 3336"; sid:1002; rev:1; classtype:attempted-admin;)
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 2288 (msg:"T5: Acceso sospechoso SSH/SFTP 2288"; sid:1003; rev:1; classtype:attempted-admin;)
